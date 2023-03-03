@@ -13,10 +13,10 @@ function Orderdata(props) {
     dispatch(deleteorder(id))
   }
 
-  // const handleedit = (id) => {
-  //   // dispatch(deleteorder(id))
-  //   navigate("/order", id)
-  // }
+  const handleedit = (id) => {
+    // dispatch(deleteorder(id))
+    navigate("/order", id)
+  }
 
   return (
     <>
