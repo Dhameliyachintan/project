@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getorder } from '../redux/action/order.action';
+import { addorder } from '../redux/action/order.action';
 
 function Order(props) {
     const navigate = useNavigate()
@@ -19,7 +19,7 @@ function Order(props) {
         }
 
         console.log('DATA', data);
-        dispatch(getorder(data))
+        dispatch(addorder(data))
         navigate('/Orderdata')
     }
 

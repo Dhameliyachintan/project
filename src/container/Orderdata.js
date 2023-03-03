@@ -1,9 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { deleteorder } from '../redux/action/order.action';
 
 function Orderdata(props) {
-  const data = useSelector(state => state.orderreducer.order)
-  console.log(data);
+  const data = useSelector((data) => data.orderreducer.order)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+
+  const handledelete = (id) => {
+    dispatch(deleteorder(id))
+  }
+
+  const handleedit = (id) => {
+    // dispatch(deleteorder(id))
+    navigate("/order", id)
+  }
+
   return (
     <>
       <div className="container">
@@ -24,6 +38,12 @@ function Orderdata(props) {
                   <td>email{i.email}</td>
                   <td>phone{i.phone}</td>
                   <td>Quantity:-{i.quantity}</td>
+                  <td>
+                    <button onClick={() => handledelete(i?.id)}>delete</button>
+                  </td>
+                  <td>
+                    <button onClick={() => handleedit(i?.id)}>edit</button>
+                  </td>
                 </tr>
               )
             })
