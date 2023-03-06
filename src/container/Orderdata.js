@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deleteorder } from '../redux/action/order.action';
 
-function Orderdata(props) {
-  const data = useSelector((data) => data.orderreducer.order)
+function Orderdata() {
+  const data = useSelector((data) => data.orderReducer.order)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -13,10 +13,10 @@ function Orderdata(props) {
     dispatch(deleteorder(id))
   }
 
-  const handleedit = (id) => {
-    // dispatch(deleteorder(id))
-    navigate("/order", id)
+  const handleedit = (data) => {
+    navigate(`/orderedit/${data}`)
   }
+
 
   return (
     <>
@@ -42,7 +42,7 @@ function Orderdata(props) {
                     <button onClick={() => handledelete(i?.id)}>delete</button>
                   </td>
                   <td>
-                    <button onClick={() => handleedit(i?.id)}>edit</button>
+                    <button onClick={() => handleedit(i.id)}>edit</button>
                   </td>
                 </tr>
               )

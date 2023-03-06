@@ -1,10 +1,10 @@
-import { ADD_ORDER, DELETEORDER, EDITORDER } from "../Actiontype"
+import { ADD_ORDER, DELETEORDER,UPDATEORDER } from "../Actiontype"
 
 
 const initialState = {
     order: [],
 }
-const Orderreducer = (state = initialState, action) => {
+const orderReducer = (state = initialState, action) => {
     if (action.type === ADD_ORDER) {
         return { ...state, order: [...state.order, action.payload] }
     }
@@ -14,7 +14,17 @@ const Orderreducer = (state = initialState, action) => {
         return { ...state, order: filter }
     }
 
+    if (action.type === UPDATEORDER) {
+        const filter = state.order.map((i) => {
+            if (i.id == action.payload.id) {
+                i = action.payload
+            }
+            return i
+        })
+        return {...state , order : filter}
+    }
+
     return state
 }
 
-export default Orderreducer
+export default orderReducer
