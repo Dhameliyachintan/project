@@ -9,21 +9,34 @@ import Appoinment from './container/Appoinment';
 import Order from './container/order';
 import Orderdata from './container/Orderdata';
 import EditOrder from './container/Orderedit';
+import { Context } from './context/theamcontext';
+import { useState } from 'react';
+import './App.css'
 
 
 
 function App() {
+
+  const [theam, setTheam] = useState('dark')
+  const onclickHandler = () => {
+    setTheam(theam === 'dark' ? 'light ' : 'dark')
+  }
+
+  console.log('theam', theam);
   return (
     <>
-      <Header />
-      <Routes>
-        <Route exact path={"/Form"} element={<Form />} />
-        <Route exact path={"/Data"} element={<Data />} />
-        <Route exact path={"/order"} element={<Order />} />
-        <Route exact path={"/Appoinment"} element={<Appoinment />} />
-        <Route exact path={"/orderdata"} element={<Orderdata />} />
-        <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
-      </Routes>
+      <Context.Provider value={theam}>
+        <button className='btn btn-primary' onClick={onclickHandler}>change theam</button>
+        <Header/>
+        <Routes>
+          <Route exact path={"/Form"} element={<Form />} />
+          <Route exact path={"/Data"} element={<Data />} />
+          <Route exact path={"/order"} element={<Order />} />
+          <Route exact path={"/Appoinment"} element={<Appoinment />} />
+          <Route exact path={"/orderdata"} element={<Orderdata />} />
+          <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
+        </Routes>
+      </Context.Provider>
     </>
   );
 }
