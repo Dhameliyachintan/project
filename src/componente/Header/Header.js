@@ -7,8 +7,8 @@ function Header(props) {
     const theam = useContext(Context)
     console.log("theam", theam);
     return (
-        <div>
-            <nav className={theam} >
+        <div className='navbar-expand-lg'>
+            <nav className={theam}>
                 {/* <button className='btn btn-primary' onClick={props.onclickHandler}>change theam</button> */}
                 <div  className={theam} >
                     <h1 className="navbar-brand" href="#">Navbar</h1>
@@ -30,6 +30,9 @@ function Header(props) {
                         </li> */}
                         <li className="nav-item">
                             <Link exact to="/order" className="nav-link">order</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link exact to="/UseReducer" className="nav-link">UseReducer</Link>
                         </li>
                     </ul>
                 </div>

@@ -12,6 +12,7 @@ import EditOrder from './container/Orderedit';
 import { Context } from './context/theamcontext';
 import { useState } from 'react';
 import './App.css'
+import UseReducer from './container/UseReducer';
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route exact path={"/order"} element={<Order />} />
           <Route exact path={"/Appoinment"} element={<Appoinment />} />
           <Route exact path={"/orderdata"} element={<Orderdata />} />
+          <Route exact path={"/UseReducer"} element={<UseReducer />} />
           <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
         </Routes>
       </Context.Provider>
