@@ -13,6 +13,7 @@ import { Context } from './context/theamcontext';
 import { useState } from 'react';
 import './App.css'
 import UseReducer from './container/UseReducer';
+import Usememo from './usecallback.js/Usememo';
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route exact path={"/Appoinment"} element={<Appoinment />} />
           <Route exact path={"/orderdata"} element={<Orderdata />} />
           <Route exact path={"/UseReducer"} element={<UseReducer />} />
+          <Route exact path={"/Usememo"} element={<Usememo />} />
           <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
         </Routes>
       </Context.Provider>

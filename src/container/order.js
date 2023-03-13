@@ -21,7 +21,6 @@ const BookMeal = () => {
         console.info(data);
 
         navigator("/orderdata");
-
         dispatch(addorder(data));
     };
 
@@ -38,7 +37,7 @@ const BookMeal = () => {
         <div>
             {/* ======= Book A Table Section ======= */}
             <section id="book-a-table" className="book-a-table">
-                <div className="container">
+                <div className="container">x
                     <div className="section-title">
                         <h2>
                             Book a <span>Meal</span>

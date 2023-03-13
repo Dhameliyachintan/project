@@ -34,6 +34,9 @@ function Header(props) {
                         <li className="nav-item">
                             <Link exact to="/UseReducer" className="nav-link">UseReducer</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link exact to="/Usememo" className="nav-link">Usememo</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

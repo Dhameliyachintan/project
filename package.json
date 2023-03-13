@@ -23,10 +23,11 @@
     "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^7.35.0",
     "react-phone-input-2": "^2.15.1",
-    "react-redux": "^8.0.2",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
     "uninstall": "^0.0.0",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"

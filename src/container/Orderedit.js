@@ -24,7 +24,7 @@ const EditOrder = () => {
   //   in useEffect first i.id is data's id and secound id is useParams id
   //   useEffect(() => {}, []);
 
-    const onclickHandler = () => {
+  const onclickHandler = () => {
     const data = {
       id,
       name,
@@ -38,8 +38,8 @@ const EditOrder = () => {
 
 
   const onchangeOnName = (event) => {
-        setname(event.target.value)
-    };
+    setname(event.target.value)
+  };
   const onchangeOnprice = (event) => {
     setprice(event.target.value);
   };
