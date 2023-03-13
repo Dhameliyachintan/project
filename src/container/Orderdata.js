@@ -28,6 +28,7 @@ function Orderdata() {
               <th>email</th>
               <th>phone</th>
               <th>quantity</th>
+              <th>price</th>
             </tr>
           </thead>
           {
@@ -38,6 +39,7 @@ function Orderdata() {
                   <td>email{i.email}</td>
                   <td>phone{i.phone}</td>
                   <td>Quantity:-{i.quantity}</td>
+                  <td>price:-{i.price}</td>
                   <td>
                     <button onClick={() => handledelete(i?.id)}>delete</button>
                   </td>

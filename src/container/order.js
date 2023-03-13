@@ -9,6 +9,7 @@ const BookMeal = () => {
     const [name, setname] = useState("");
     const [price, setprice] = useState("");
     const [quantity, setquantity] = useState("");
+    const [email, setEmail] = useState("");
 
     const onclickHandler = () => {
         const data = {
@@ -33,11 +34,14 @@ const BookMeal = () => {
     const onchangeOnQuantity = (event) => {
         setquantity(event.target.value);
     };
+    const onchangeOnemail = (event) => {
+        setEmail(event.target.value);
+    };
     return (
         <div>
             {/* ======= Book A Table Section ======= */}
             <section id="book-a-table" className="book-a-table">
-                <div className="container">x
+                <div className="container">
                     <div className="section-title">
                         <h2>
                             Book a <span>Meal</span>
@@ -50,7 +54,7 @@ const BookMeal = () => {
                     <form>
                         <div className="d-flex justify-content-center align-item-center">
                             <div className="row">
-                                <div className="col-md-12 form-group">
+                                <div className="col-md-12 form-group mb-3">
                                     <label>Enter Name</label>
                                     <input
                                         type="text"
@@ -61,7 +65,17 @@ const BookMeal = () => {
                                     />
                                 </div>
                                 <br />
-                                <div className="col-md-12 form-group my-5">
+                                <div className="col-md-12 form-group my-3">
+                                    <label>Enter email</label>
+                                    <input
+                                        type="text"
+                                        name="email"
+                                        value={email}
+                                        className="form-control "
+                                        onChange={onchangeOnemail}
+                                    />
+                                </div>
+                                <div className="col-md-12 form-group my-3">
                                     <label>Enter Price</label>
                                     <input
                                         type="number"
@@ -71,8 +85,7 @@ const BookMeal = () => {
                                         onChange={onchangeOnprice}
                                     />
                                 </div>
-                                <br />
-                                <div className="col-md-12 form-group">
+                                <div className="col-md-12 form-group my-3">
                                     <label>Enter Quantity</label>
                                     <input
                                         type="number"
