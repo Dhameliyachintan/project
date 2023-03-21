@@ -17,7 +17,7 @@ function Header(props) {
                     </button>
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link exact to={"/Orderdata"} className="nav-link">Orderdata</Link>
+                            <Link exact to={"/Orderdata"} className="nav-link px-2">Orderdata</Link>
                         </li>
                         {/* <li className="nav-item">
                             <Link exact to={"/Form"} className="nav-link">Form</Link>
@@ -29,13 +29,16 @@ function Header(props) {
                             <Link exact to={"/Appoinment"} className="nav-link">Appoinment</Link>
                         </li> */}
                         <li className="nav-item">
-                            <Link exact to="/order" className="nav-link">order</Link>
+                            <Link exact to="/order" className="nav-link px-2">order</Link>
                         </li>
                         <li className="nav-item">
-                            <Link exact to="/UseReducer" className="nav-link">UseReducer</Link>
+                            <Link exact to="/UseReducer" className="nav-link px-2">UseReducer</Link>
                         </li>
                         <li className="nav-item">
-                            <Link exact to="/Usememo" className="nav-link">Usememo</Link>
+                            <Link exact to="/Usememo" className="nav-link px-2">Usememo</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link exact to="/User" className="nav-link px-2">User</Link>
                         </li>
                     </ul>
                 </div>

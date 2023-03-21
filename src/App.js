@@ -14,6 +14,7 @@ import { useState } from 'react';
 import './App.css'
 import UseReducer from './container/UseReducer';
 import Usememo from './usecallback.js/Usememo';
+import User from './container/user';
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route exact path={"/orderdata"} element={<Orderdata />} />
           <Route exact path={"/UseReducer"} element={<UseReducer />} />
           <Route exact path={"/Usememo"} element={<Usememo />} />
+          <Route exact path={"/User"} element={<User />} />
           <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
         </Routes>
       </Context.Provider>
