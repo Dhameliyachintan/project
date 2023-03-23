@@ -8,10 +8,11 @@ function User(props) {
     const userdata = useSelector((data) => data.userReducer.user);
     console.log(userdata);
     const dispatch = useDispatch()
-    console.log("DATA", data)
+    // console.log("DATA", data)
 
     useEffect(() => {
-        dispatch(Users())
+        dispatch({ type: 'FETCH_USERS' })
+        // dispatch(Users())
     }, [])
 
     // const getData = async () => {

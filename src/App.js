@@ -15,6 +15,7 @@ import './App.css'
 import UseReducer from './container/UseReducer';
 import Usememo from './usecallback.js/Usememo';
 import User from './container/user';
+import Sagauser from './container/Sagauser';
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route exact path={"/Usememo"} element={<Usememo />} />
           <Route exact path={"/User"} element={<User />} />
           <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
+          <Route exact path={"/Sagauser"} element={<Sagauser />} />
         </Routes>
       </Context.Provider>
     </>

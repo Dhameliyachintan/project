@@ -40,6 +40,9 @@ function Header(props) {
                         <li className="nav-item">
                             <Link exact to="/User" className="nav-link px-2">User</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link exact to="/Sagauser" className="nav-link px-2">Sagauser</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
