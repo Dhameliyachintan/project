@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { signInWithPopup } from "firebase/auth";
 import { Toast } from 'bootstrap';
-import { auth } from '../Firebase.js';
+import { auth, provider } from '../Firebase.js';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,7 +15,7 @@ function Forms() {
 
     const handlelogin = async () => {
         try {
-            const data = await signInWithPopup(auth,)
+            const data = await signInWithPopup(auth, provider)
             console.log("data++", data);
             const user = {
                 email: data.user.email,
@@ -41,10 +41,7 @@ function Forms() {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    <GoogleLoginButton onClick={() => handlelogin} />
+                    <GoogleLoginButton onClick={() => handlelogin()} />
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
