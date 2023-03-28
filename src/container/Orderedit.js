@@ -1,39 +1,56 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { updateorder } from "../redux/action/order.action";
-const EditOrder = () => {
+
+const Orderedit = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const { id } = useParams();
-  console.log("id", id);
   const [name, setname] = useState("");
   const [price, setprice] = useState("");
   const [quantity, setquantity] = useState("");
+  const [email, setEmail] = useState("");
 
-  const data = useSelector((data) => data.orderReducer.order);
 
   React.useEffect(() => {
-    const values = data?.find((i) => i.id == id);
-    setname(values?.name);
-    setquantity(values?.quantity);
-    setprice(values?.price);
+    getData()
   }, []);
 
+
+  const getData = async() => {
+    const res = await axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_BASE_URL}/get/${id}`,
+    });
+
+    console.log(res , "res")
+    setname(res.name)
+    setprice(res.data.price)
+    setquantity(res.data.quantity)
+    setEmail(res.data.email)
+
+  }
   //   in useEffect first i.id is data's id and secound id is useParams id
   //   useEffect(() => {}, []);
 
-  const onclickHandler = () => {
+  const onclickHandler = async () => {
     const data = {
       id,
       name,
+      email,
       price,
       quantity,
     };
 
-    dispatch(updateorder(data));
-    navigate("/orderdata");
+    await axios({
+      method: "PATCH",
+      url: `${process.env.REACT_APP_BASE_URL}/get/${id}`,
+      data: data
+    });
+
+    // console.log(response.data);
+    // dispatch(updateorder(data));
+    navigate("/Orderdata");
   };
 
 
@@ -46,6 +63,10 @@ const EditOrder = () => {
   const onchangeOnQuantity = (event) => {
     setquantity(event.target.value);
   };
+  const onchangeOnemail = (event) => {
+    setEmail(event.target.value);
+  };
+
   return (
     <div>
       <section id="book-a-table" className="book-a-table">
@@ -94,6 +115,16 @@ const EditOrder = () => {
                     onChange={onchangeOnQuantity}
                   />
                 </div>
+                <div className="col-md-12 form-group">
+                  <label>Enter email</label>
+                  <input
+                    type="text"
+                    name="quantity"
+                    value={email}
+                    className="form-control"
+                    onChange={onchangeOnemail}
+                  />
+                </div>
                 <div className="text-center mt-5">
                   <button
                     type="button"
@@ -112,4 +143,5 @@ const EditOrder = () => {
   );
 };
 
-export default EditOrder;
+export default Orderedit;
+

@@ -2,27 +2,40 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addorder } from "../redux/action/order.action";
-const BookMeal = () => {
+import axios from "axios"
+
+const  Order = () => {
     const navigator = useNavigate();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const [name, setname] = useState("");
     const [price, setprice] = useState("");
     const [quantity, setquantity] = useState("");
     const [email, setEmail] = useState("");
 
-    const onclickHandler = () => {
+    const onclickHandler = async () => {
         const data = {
-            id: new Date().getTime(),
+            // id: new Date().getTime(),
             name,
             price,
+            email,
             quantity,
         };
 
         console.info(data);
 
-        navigator("/orderdata");
-        dispatch(addorder(data));
+
+        const response = await axios({
+
+            method: "POST",
+            url: `${process.env.REACT_APP_BASE_URL}/get`,
+            data: data
+
+        })
+        console.log("res", response)
+        navigator("/Orderdata");
+
+        // dispatch(addorder(data));
     };
 
     const onchangeOnName = (event) => {
@@ -114,4 +127,6 @@ const BookMeal = () => {
     );
 };
 
-export default BookMeal;
+export default Order;
+
+

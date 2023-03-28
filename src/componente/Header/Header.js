@@ -43,6 +43,9 @@ function Header(props) {
                         <li className="nav-item">
                             <Link exact to="/Sagauser" className="nav-link px-2">Sagauser</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link exact to="/Forms" className="nav-link px-2">Forms</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

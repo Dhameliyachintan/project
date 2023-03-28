@@ -16,6 +16,8 @@ import UseReducer from './container/UseReducer';
 import Usememo from './usecallback.js/Usememo';
 import User from './container/user';
 import Sagauser from './container/Sagauser';
+import Forms from './Loginform/Forms';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -29,6 +31,18 @@ function App() {
   console.log('theam', theam);
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Context.Provider value={theam}>
         <button className='btn btn-primary' onClick={onclickHandler}>change theam</button>
         <Header/>
@@ -43,6 +57,7 @@ function App() {
           <Route exact path={"/User"} element={<User />} />
           <Route exact path={"/orderedit/:id"} element={<EditOrder />} />
           <Route exact path={"/Sagauser"} element={<Sagauser />} />
+          <Route exact path={"/Forms"} element={<Forms />} />
         </Routes>
       </Context.Provider>
     </>
