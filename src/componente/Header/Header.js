@@ -29,7 +29,7 @@ function Header(props) {
                             <Link exact to={"/Appoinment"} className="nav-link">Appoinment</Link>
                         </li> */}
                         <li className="nav-item">
-                            <Link exact to="/order" className="nav-link px-2">order</Link>
+                            <Link exact to="/Order" className="nav-link px-2">Order</Link>
                         </li>
                         <li className="nav-item">
                             <Link exact to="/UseReducer" className="nav-link px-2">UseReducer</Link>

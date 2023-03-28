@@ -6,7 +6,7 @@ import Header from './componente/Header/Header';
 import Data from './container/Data';
 import Form from './container/Form';
 import Appoinment from './container/Appoinment';
-import Order from './container/order';
+import Order from './container/Order';
 import Orderdata from './container/Orderdata';
 import EditOrder from './container/Orderedit';
 import { Context } from './context/theamcontext';
@@ -18,6 +18,7 @@ import User from './container/user';
 import Sagauser from './container/Sagauser';
 import Forms from './Loginform/Forms';
 import { ToastContainer } from 'react-toastify';
+import PrivateRoute from './container/PrivateRoute';
 
 
 
@@ -49,7 +50,7 @@ function App() {
         <Routes>
           <Route exact path={"/Form"} element={<Form />} />
           <Route exact path={"/Data"} element={<Data />} />
-          <Route exact path={"/order"} element={<Order />} />
+          <Route exact path={"/Order"} element={<PrivateRoute><Order /></PrivateRoute>} />
           <Route exact path={"/Appoinment"} element={<Appoinment />} />
           <Route exact path={"/orderdata"} element={<Orderdata />} />
           <Route exact path={"/UseReducer"} element={<UseReducer />} />

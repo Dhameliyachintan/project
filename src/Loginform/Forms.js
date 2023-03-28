@@ -6,12 +6,19 @@ import { Toast } from 'bootstrap';
 import { auth, provider } from '../Firebase.js';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 function Forms() {
+    const navigate =  useNavigate()
 
     const onSubmithandler = (e) => {
         e.preventDefult()
     }
+
+    // const { email, Password } = (e) => {
+    //     email: e.target.email.value,
+    //     Password: e.target.password.value
+    // }
 
     const handlelogin = async () => {
         try {
@@ -24,6 +31,7 @@ function Forms() {
 
             localStorage.setItem("user", JSON.stringify(user))
             toast.success("login successfull")
+            navigate("Order")
         } catch (error) {
             toast.error(new Error(error).message)
         }
